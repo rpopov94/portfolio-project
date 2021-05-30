@@ -1,0 +1,21 @@
+.bg-light {
+    background: rgba(103, 105, 138, 0.92);
+}
+.resume-name{
+    color: gray;
+}
+.resume-section-heading:before{
+        background: gray;
+}
+.resume-section-heading{
+    color: gray;
+}
+
+.proj{
+    border:solid 1px rgba(103, 105, 138, 0.92);
+    border-radius: 15px;
+}
+.page-link {
+        color: #767676;
+        background-color: #abdabd1a;
+}

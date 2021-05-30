@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <div class="resume-header">
+        <div class="row align-items-center">
+            <div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
+                <h2 class="resume-name mb-0 text-uppercase">Popov Roman</h2>
+                <div class="resume-tagline mb-3 mb-md-0">Django developer</div>
+            </div><!--//resume-title-->
+            <div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i><a class="resume-link"
+                                                                                             href="tel:#">+7
+                        (910) 272 37-16</a></li>
+                    <li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg mr-2"></i><a
+                            class="resume-link" href="mailto:#">rpopov@jinr.ru</a></li>
+
+                    <li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>Moskow</li>
+                    <!--li-- class="mb-0 list-inline-item">
+                                <i class="fas fa-download fa-fw fa-lg mr-2"></i>
+                                <a class="nav-link" href="{% static 'assets\files\CV_Popov_RN.pdf' %}">Resume</a>
+                            </li-->
+                </ul>
+            </div><!--//resume-contact-->
+        </div><!--//row-->
+
+    </div><!--//resume-header-->
+    <hr>
+{% endblock %}
+{% block card %}
+    <div class="resume-intro py-3">
+        <div class="media flex-column flex-md-row align-items-center">
+            <img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto"
+                 src="{% static 'assets/images/myPhoto.jpg' %}" alt="image">
+            <div class="media-body text-left">
+                <ul>
+                    <li>Python</li>
+                    <li>PostgreSQL</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+        </div>
+    </div><!--//resume-intro-->
+    <hr>
+{% endblock %}
+{% block content %}
+    <h3 class="text-uppercase resume-section-heading mb-4">Main Porfolio</h3>
+    <div class="row">
+        {% for project in page_obj %}
+            <!--div class="col item proj"-->
+            <div class="col-lg-4 col-md-6">
+                <h5>{{ project.title }}</h5>
+                <p>{{ project.description }}</p>
+                <img src="{{ project.image.url }}" alt="image" width="100px" height="110px"><br>
+                {% if project.url %}
+                    <a href='{{ project.url }}' target="_blank">GitHub</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+   </div>
+{% endblock %}
