@@ -48,14 +48,14 @@
     <div class="row">
         {% for project in page_obj %}
             <!--div class="col item proj"-->
-            <div class="col-lg-4 col-md-6">
-                <h5>{{ project.title }}</h5>
-                <p>{{ project.description }}</p>
-                <img src="{{ project.image.url }}" alt="image" width="100px" height="110px"><br>
-                {% if project.url %}
+            <div class="col-lg-3 col-md-6 mx-auto">
+                <div class="proj">
+                    <h5>{{ project.title }}</h5>
+                    <p>{{ project.description }}</p>
+                    <img src="{{ project.image.url }}" alt="image" width="100px" height="110px"><br>
                     <a href='{{ project.url }}' target="_blank">GitHub</a>
-                {% endif %}
+                </div>
             </div>
         {% endfor %}
-   </div>
+    </div>
 {% endblock %}
