@@ -7,7 +7,7 @@
     </div>
 {% endblock %}
 {% block content %}
-    <p>{{ blog.description }}</p>
+    <p>{{ blog.description | safe }}</p>
     <h6>Дата создания статьи {{ blog.date }}</h6>
     <div class="row">
         <div class="mx-auto my-sm-auto">
