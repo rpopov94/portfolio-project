@@ -1,6 +1,15 @@
 ### venv ###
 ../venv/
 
+
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
 ### PyCharm ###
 # User-specific stuff
 .idea/**/workspace.xml
@@ -20,6 +29,15 @@
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+/static/
 
 # Gradle
 .idea/**/gradle.xml
