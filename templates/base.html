@@ -24,40 +24,44 @@
 <body>
 <!-- DEMO ONLY -->
 <!--navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'assets/images/logo.png' %} " width='45px' height='40px'
-                                          alt="logo"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'all_articles' %}" target="_blank">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% static 'assets\files\CV_Popov_RN.pdf' %}" target="_blank">Resume</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://www.linkedin.com/in/ab8a019b/" tabindex="-1" aria-disabled="true">LinkedIn</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://github.com/rpopov94" tabindex="-1" aria-disabled="true" target="_blank">GiHub</a>
-            </li>
-        </ul>
+<nav id="topNav" class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'assets/images/logo.png' %} " width='45px'
+                                                             height='40px'
+                                                             alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'all_articles' %}" target="_blank">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% static 'assets\files\CV_Popov_RN.pdf' %}" target="_blank">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/ab8a019b/" tabindex="-1" aria-disabled="true">LinkedIn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/rpopov94" tabindex="-1" aria-disabled="true"
+                       target="_blank">GiHub</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
+
 <div class="main-wrapper">
     <div class="container px-3 px-lg-5">
         <article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
             {% block head %}{% endblock %}
             {% block card %}{% endblock %}
             {% block content %}{% endblock %}
-             <div class="container">
+            <div class="container">
                 <div class="row">
                     <div class="mx-auto my-sm-5">
                         {% if page_obj.has_other_pages %}
@@ -87,19 +91,21 @@
             <div class="resume-footer text-center">
                 <ul class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-muted">
                     <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link"
-                                                                 href="https://github.com/rpopov94"><i class="fab fa-github"></i><span
+                                                                 href="https://github.com/rpopov94"><i
+                            class="fab fa-github"></i><span
                             class="d-none d-lg-inline-block text-muted">GitHub</span></a></li>
                     <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link"
                                                                  href="https://www.linkedin.com/in/ab8a019b/">
                         <i class="fab fa-linkedin"></i>
-                        <span  class="d-none d-lg-inline-block text-muted">LinkedIn</span></a></li>
+                        <span class="d-none d-lg-inline-block text-muted">LinkedIn</span></a></li>
                     <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link"
                                                                  href="{% url 'all_articles' %}">
                         <i class="fas fa-blog"></i><span
                             class="d-none d-lg-inline-block text-muted">Blog</span></a>
                     </li>
                     <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link"
-                                                                 href="{% static 'assets\files\CV_Popov_RN.pdf' %}" target="_blank">
+                                                                 href="{% static 'assets\files\CV_Popov_RN.pdf' %}"
+                                                                 target="_blank">
                         <i class="fas fa-file-alt"></i><span
                             class="d-none d-lg-inline-block text-muted">Resume</span></a>
                     </li>
@@ -109,6 +115,8 @@
                 <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
             </footer>
         </article>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     </div><!--//main-wrapper-->
 </div>
 </body>
